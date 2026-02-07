@@ -1,0 +1,25 @@
+/*
+#05070A  // fundo principal
+#000000  // preto
+#0B3C5D  // azul escuro
+#1E88E5  // azul principal
+#4FC3F7  // azul claro
+#C9CED6  // cinza claro metálico
+#8A8F98  // cinza médio
+#4A4F55  // cinza escuro
+*/
+
+nav {
+    scroll-target-group: auto;
+}
+
+nav a:target-current {
+    color: #1E88E5;
+}
+
+.menu-mobile {
+    left: -100%;
+}
+.menu-mobile.active {
+    left: 0;
+}

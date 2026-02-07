@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt-AO" class="scroll-smooth" prefix="og: https://ogp.me/ns#">
+<head>
+    <!-- Metadados básicos -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Título otimizado para SEO -->
+    <title>Caixilharia de Alumínio Mualo - Portas Janelas Angola | Fachadas Alumínio Luanda</title>
+    <meta name="google-site-verification" content="C_0PqoBuVf3MMnmuSyqUU0_cJZgrCXxw0Yeuo-vupwo" />
+    
+    <!-- Meta description otimizada -->
+    <meta name="description" content="Caixilharia Mualo Angola: Fabricação e instalação de portas de alumínio, janelas, fachadas, divisórias, box para banheiro. Orçamentos grátis +244 944 255 241 Luanda">
+    
+    <!-- Palavras-chave -->
+    <meta name="keywords" content="caixilharia alumínio, portas alumínio, janelas alumínio, fachadas alumínio, Angola, Luanda">
+    
+    <!-- Leaflet CSS para Mapa Interativo -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Swiper CSS para Galeria -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS para Animações no Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ANIMAÇÃO CÚBICA NO BANNER */
+        .cubes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cube {
+            position: absolute;
+            top: 80vh;
+            left: 45vw;
+            width: 10px;
+            height: 10px;
+            border: solid 1px #1E88E5;
+            transform-origin: top left;
+            transform: scale(0) rotate(0deg) translate(-50%, -50%);
+            animation: cube 12s ease-in forwards infinite;
+        }
+        
+        .cube:nth-child(2n) {
+            border-color: #0B3C5D;
+        }
+        
+        .cube:nth-child(2) {
+            animation-delay: 2s;
+            left: 25vw;
+            top: 40vh;
+        }
+        
+        .cube:nth-child(3) {
+            animation-delay: 4s;
+            left: 75vw;
+            top: 50vh;
+        }
+        
+        .cube:nth-child(4) {
+            animation-delay: 6s;
+            left: 90vw;
+            top: 10vh;
+        }
+        
+        @keyframes cube {
+            from {
+                transform: scale(0) rotate(0deg) translate(-50%, -50%);
+                opacity: 1;
+            }
+            to {
+                transform: scale(20) rotate(960deg) translate(-50%, -50%);
+                opacity: 0;
+            }
+        }
+        
+        /* BOTÕES DE NAVEGAÇÃO NO BANNER */
+        .banner-nav {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 10;
+        }
+        
+        .banner-nav-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        .banner-nav-btn:hover {
+            background: rgba(30, 136, 229, 0.8);
+            transform: scale(1.1);
+            border-color: #1E88E5;
+        }
+        
+        /* ANIMAÇÃO DE DIGITAR NO BANNER */
+        .typewriter-text {
+            overflow: hidden;
+            border-right: .15em solid #1E88E5;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #1E88E5; }
+        }
+        
+        /* GALERIA SWIPER */
+        .swiper {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .swiper-slide {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .swiper-slide:hover img {
+            transform: scale(1.05);
+        }
+        
+        .swiper-slide-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .swiper-slide:hover .swiper-slide-info {
+            transform: translateY(0);
+        }
+        
+        .swiper-button-next, .swiper-button-prev {
+            color: white;
+            background: rgba(30, 136, 229, 0.7);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+        }
+        
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.5;
+            width: 12px;
+            height: 12px;
+        }
+        
+        .swiper-pagination-bullet-active {
+            background: #1E88E5;
+            opacity: 1;
+        }
+        
+        /* MAPA INTERATIVO */
+        #map {
+            width: 100%;
+            height: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        
+        .map-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            justify-content: center;
+        }
+        
+        .map-btn {
+            padding: 8px 15px;
+            background: #0B3C5D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .map-btn:hover {
+            background: #1E88E5;
+            transform: translateY(-2px);
+        }
+        
+        /* BOTÃO WHATSAPP FLUTUANTE */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            transform: scale(1.1);
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.4);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .whatsapp-float i {
+            margin-top: 3px;
+        }
+        
+        /* ANIMAÇÕES NO SCROLL */
+        [data-aos] {
+            opacity: 0;
+            transition-property: transform, opacity;
+        }
+        
+        [data-aos].aos-animate {
+            opacity: 1;
+        }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 768px) {
+            .banner-nav {
+                bottom: 20px;
+            }
+            
+            .banner-nav-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .swiper {
+                height: 300px;
+            }
+            
+            .typewriter-text {
+                white-space: normal;
+                animation: none;
+                border-right: none;
+            }
+        }
+    </style>
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+</head>
+<body class="w-screen h-screen bg-black text-[#f9f9f9]">
+    
+    <!-- Botão WhatsApp Flutuante -->
+    <a href="https://wa.me/244944255241" style="display: none" target="_blank" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <div class="fixed z-[-1] bg-cover bg-center w-screen h-screen inset-0 bg-[url('./IMG-20260207-WA0068.jpg')]"></div>
+    
+    <!-- Animações Cúbicas no Banner -->
+    <div class="hidden cubes">
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+    </div>
+    
+    <header class="transition-all z-10 bg-[#05070A] fixed w-full top-0 left-0 right-0 flex gap-4 justify-between items-center py-6 sm:py-6 px-[8%]">
+        <div class="flex justify-center items-center">
+            <img class="aspect-auto w-32" src="./logo.jpg"> 
+            <h2 class="hidden bg-gradient-to-b from-[#1E88E5] to-[#0B3C5D] bg-clip-text text-transparent text-3xl font-bold">Mualo</h2>
+        </div>
+        
+        
+        <nav class="fixed sm:hidden menu-mobile top-0 bottom-0 transition-all bg-[#121212] p-10 pr-12">
+            <div class="flex flex-col gap-6 text-md">
+                <a href="#home">Ínicio</a>
+                <a href="#about">Sobre</a>
+                <a href="#services">Serviços</a>
+                <a href="#gallery">Projectos</a>
+                <a href="#map-section">Localização</a>
+                <a href="#contact">Contacto</a>
+                <span onclick="document.querySelector('.lang-span').classList.toggle('hidden')">Idioma ▼
+                    <span class="lang-span hidden block flex flex-col gap-2 mt-2 text-sm font-light ml-4">
+                        <a class="text-[#1E88E5]">Português</a>
+                        <a href="./english.html">English</a>
+                    </span>
+                </span>
+            </div>            
+        </nav>
+        
+        <button onclick="toggleMenu()" class="text-3xl text-white font-bold sm:hidden">≡</button>
+        
+        <nav class="hidden text-4sm sm:flex justify-between gap-6 items-center">
+            <a href="#home">Ínicio</a>
+            <a href="#about">Sobre</a>
+            <a href="#services">Serviços</a>
+            <a href="#gallery">Galeria</a>
+            <a href="#map-section">Localização</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </header>
+    
+    <!-- Banner Principal com Animações -->
+    <main id="home" class="relative flex flex-col gap-6 justify-center my-0.5 mt-24 items-center py-24 px-8 sm:p-24 min-h-128 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent">
+        <h1 class="text-5xl font-bold text-white typewriter-text" data-aos="fade-up">
+            Caixilharia de Alumínio Mualo
+        </h1>
+        <p class="font-semibold text-4sm max-w-2xl text-center" data-aos="fade-up" data-aos-delay="200">
+            Especialistas em soluções de alumínio de alta qualidade para Angola. Fabricação, instalação e manutenção de portas, janelas, fachadas e muito mais.
+        </p>
+        <div class="flex mt-8 flex-wrap gap-4 items-center justify-center" data-aos="fade-up" data-aos-delay="400">
+            <a href="https://wa.me/244944255241" target="_blank" class="transition-all hover:brightness-90 hover:translate-y-[-4px] text-xl p-3 px-6 rounded-xl bg-gradient-to-r border-[#C9CED6] from-[#1E88E5] to-[#0B3C5D]">
+                Solicitar Orçamento
+            </a>
+            <a href="#gallery" class="hidden text-xl p-3 px-6 transition-all hover:translate-y-[-4px] hover:brightness-90 rounded-xl border-1 border-green-500 text-green-500">
+                Ver Projectos
+            </a>
+        </div>
+        
+        <!-- Botões de Navegação no Banner -->
+        <div class="banner-nav">
+            <button class="banner-nav-btn sticky left-0 right-0" onclick="scrollToSection('about')">
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <button class="banner-nav-btn" onclick="scrollToSection('services')">
+                <i class="fas fa-briefcase"></i>
+            </button>
+            <button class="banner-nav-btn" onclick="scrollToSection('gallery')">
+                <i class="fas fa-images"></i>
+            </button>
+            <button class="banner-nav-btn" onclick="scrollToSection('contact')">
+                <i class="fas fa-phone"></i>
+            </button>
+        </div>
+    </main>
+    
+    <section id="about" class="flex flex-col sm:place-items-center sm:justify-center sm:items-center sm:grid sm:grid-cols-2 gap-12 px-4 sm:p-24 py-48 min-h-128 bg-white" data-aos="fade-up">
+        <div class="flex flex-col gap-10 col-span-1 justify-center items-baseline">
+            <div>
+                <h2 class="font-bold text-4xl text-[#0B3C5D] mb-6 tracking-tight">Sobre a Empresa</h2>
+                <div class="space-y-5 text-[#2D3748]">
+                    <p class="text-lg leading-relaxed">A <strong class="text-[#0B3C5D]">Caixilharia de Alumínio Mualo</strong> é uma empresa angolana especializada em soluções de alumínio de alta qualidade para residências, comércios e indústrias.</p>
+                    <p class="text-lg leading-relaxed">Com uma equipa de profissionais experientes, oferecemos serviços de fabricação, instalação e manutenção de portas, janelas, fachadas em alumínio e muito mais.</p>
+                    <p class="text-lg leading-relaxed">O nosso compromisso é com a excelência, durabilidade e satisfação total dos nossos clientes, utilizando materiais de primeira linha e técnicas modernas de fabricação.</p>
+                </div>
+            </div>
+    
+            <!-- Área de Atuação -->
+            <div class="pt-6 border-t border-gray-200">
+                <h3 class="text-2xl font-semibold text-[#0B3C5D] mb-6 tracking-tight">Área de Atuação</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#0B3C5D] text-white rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4 class="font-semibold text-[#121212] text-lg">Cobertura Geográfica</h4>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">Atuamos em toda a província de Luanda, com capacidade para projetos em outras províncias de Angola, garantindo qualidade e pontualidade em todas as regiões.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#0B3C5D] text-white rounded-full flex items-center justify-center">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h4 class="font-semibold text-[#121212] text-lg">Tipos de Projetos</h4>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">Residenciais, comerciais, industriais, governamentais e institucionais. Desenvolvemos soluções personalizadas para cada tipo de necessidade.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Referências -->
+            <div class="pt-6 border-t border-gray-200">
+                <h3 class="text-2xl font-semibold text-[#0B3C5D] mb-6 tracking-tight">Referências</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-1">
+                        <h4 class="font-semibold text-[#121212] text-lg mb-2">Experiência Consolidada</h4>
+                        <p class="text-gray-700">Mais de 15 anos de presença no mercado angolano de caixilharia, com portfolio de projetos executados.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-semibold text-[#121212] text-lg mb-2">Qualidade Certificada</h4>
+                        <p class="text-gray-700">Padrões internacionais de fabricação e instalação, com controlo de qualidade em todas as etapas.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-semibold text-[#121212] text-lg mb-2">Materiais Premium</h4>
+                        <p class="text-gray-700">Utilização exclusiva de alumínio de alta resistência com acabamento superior e durabilidade garantida.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-semibold text-[#121212] text-lg mb-2">Equipa Técnica</h4>
+                        <p class="text-gray-700">Profissionais qualificados, com formação contínua e experiência prática em projetos complexos.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Clientes -->
+            <div class="pt-6 border-t border-gray-200">
+                <h3 class="text-2xl font-semibold text-[#0B3C5D] mb-6 tracking-tight">Clientes e Parcerias</h3>
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-[#121212] text-lg">Portfólio Diversificado</h4>
+                        <p class="text-gray-700 leading-relaxed">Já atendemos mais de 500 clientes, incluindo residências de alto padrão, empresas multinacionais, complexos industriais e instituições públicas de referência.</p>
+                    </div>
+                    <div class="bg-[#f8fafc] border-l-4 border-[#0B3C5D] p-5">
+                        <p class="text-gray-800 italic leading-relaxed text-lg">
+                            "Trabalhamos com a Mualo há mais de 3 anos em diversos projetos. A qualidade do alumínio, o rigor técnico e o profissionalismo da equipa são consistentemente excepcionais. Uma parceria de confiança que recomendamos."
+                        </p>
+                        <p class="mt-4 font-medium text-[#0B3C5D] text-right">— Eng. João Silva<br><span class="text-sm text-gray-600">Project Manager, Construções Lda.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hidden w-10/10 rounded-2xl col-span-1 aspect-[16/10] bg-[url('./IMG-20260207-WA0061.jpg')] bg-center bg-cover shadow-xl" data-aos="zoom-in"></div>
+    </section>
+    <section id="services" class="text-black px-2 py-24 sm:p-24 min-h-128 w-full" data-aos="fade-up">
+        <div class="container">
+            <div class="flex flex-col text-white justify-center items-center gap-5">
+                <h2 class="font-bold text-4xl text-white text-center">Nossos Serviços</h2>
+                <p class="text-md font-bold text-center">Soluções completas em alumínio para suas necessidades</p>
+            </div>
+            
+            <div class="flex flex-col justify-center items-center w-full py-24 px-0 lg:grid sm:grid-cols-3 sm:px-[8%] gap-10">
+                <div class="col-span-1 p-8 rounded-xl shadow-xl bg-white w-19/20">
+                    <div class="rounded-xl mb-4 w-full h-40 bg-cover bg-center bg-[url('./IMG-20260207-WA0078.jpg')]"></div>
+                    <h3 class="text-2xl font-bold mb-3 uppercase">Portas de Alumínio e Caixilharia</h3>
+                    <p class="text-xl font-semibold">Fabricamos e instalamos portas de alumínio / caixilharia de alta qualidade, com diversos modelos e acabamentos para sua residência ou empresa.</p>
+                </div>
+                
+                <div class="col-span-1 p-8 rounded-xl shadow-xl bg-white w-19/20">
+                    <div class="rounded-xl mb-4 w-full h-40 bg-cover bg-center bg-[url('./IMG-20260207-WA0049.jpg')]"></div>
+                    <h3 class="text-2xl font-bold mb-3 uppercase">Janelas em Alumínio</h3>
+                    <p class="text-xl font-semibold">Janelas modernas, eficientes e seguras que proporcionam conforto térmico e acústico, além de valorizar o imóvel.</p>
+                </div>
+                
+                <div class="col-span-1 p-8 rounded-xl shadow-xl bg-white w-19/20">
+                    <div class="rounded-xl mb-4 w-full h-40 bg-cover bg-center bg-[url('./IMG-20260207-WA0062.jpg')]"></div>
+                    <h3 class="text-2xl font-bold mb-3 uppercase">Divisórias e Box</h3>
+                    <p class="text-xl font-semibold">Divisórias de ambientes e boxes para banheiros em alumínio com vidro, proporcionando modernidade e funcionalidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- GALERIA INTERATIVA -->
+    <section id="gallery" class="py-24 bg-[#0B3C5D] text-white" data-aos="fade-up">
+        <div class="container mx-auto px-4 sm:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">Galeria de Trabalhos</h2>
+            <p class="text-center mb-12 max-w-2xl mx-auto">Confira alguns dos nossos trabalhos realizados em alumínio. Navegue pela galeria para ver nossa qualidade e diversidade de serviços.</p>
+            
+            <!-- Swiper Container -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./016.jpg" alt="Portas de Alumínio">
+                        <div class="swiper-slide-info">
+                            <h3>Portas de Alumínio</h3>
+                            <p>Instalação de portas residenciais e comerciais</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./IMG-20260207-WA0049.jpg" alt="Janelas em Alumínio">
+                        <div class="swiper-slide-info">
+                            <h3>Janelas em Alumínio</h3>
+                            <p>Sistemas de janelas com isolamento térmico</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./001.jpg" alt="Divisórias">
+                        <div class="swiper-slide-info">
+                            <h3>Divisórias em Alumínio</h3>
+                            <p>Ambientes separados com elegância</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./014.jpg" alt="Manutenção">
+                        <div class="swiper-slide-info">
+                            <h3>Manutenção de Alumínio</h3>
+                            <p>Serviços de reparação e conservação</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./005.jpg" alt="Projectos Personalizados">
+                        <div class="swiper-slide-info">
+                            <h3>Projectos Personalizados</h3>
+                            <p>Soluções sob medida para cada cliente</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- MAPA INTERATIVO -->
+    <section id="map-section" class="z-10 py-24 bg-[#f1f1f1] text-black">
+        <div class="container mx-auto px-4 sm:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4 text-[#0B3C5D]">Nossa Localização</h2>
+            <p class="text-center mb-8 max-w-2xl mx-auto">Encontre-nos facilmente em Luanda, Angola. Use os controles para explorar o mapa.</p>
+            
+            <!-- Mapa Container -->
+            <div id="map" class="sticky left-0 right-0"></div>
+            
+            <!-- Controles do Mapa -->
+            <div style="display: none;" class="hidden map-controls">
+                <button class="hidden map-btn" onclick="zoomIn()">
+                    <i class="fas fa-search-plus"></i> Zoom In
+                </button>
+                <button class="hidden map-btn" onclick="zoomOut()">
+                    <i class="fas fa-search-minus"></i> Zoom Out
+                </button>
+                <button class="hidden map-btn" onclick="resetView()">
+                    <i class="fas fa-sync-alt"></i> Resetar
+                </button>
+                <button class="hidden hide map-btn" onclick="locateMe()">
+                    <i class="fas fa-location-arrow"></i> Minha Localização
+                </button>
+            </div>
+            
+            <div class="hidden mt-8 text-center">
+                <h3 class="text-xl font-bold text-[#0B3C5D]">Caixilharia de Alumínio Mualo</h3>
+                <p class="mt-2"><i class="fas fa-map-marker-alt text-[#1E88E5]"></i> Luanda, Angola</p>
+                <p class="mt-1"><i class="fas fa-phone text-[#1E88E5]"></i> +244 944 255 241</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="text-black px-2 py-24 sm:p-24 min-h-128 bg-[#f1f1f1] w-full sm:px-[13%]">
+        <!-- (MANTENDO O FORMULÁRIO ORIGINAL) -->
+        <div class="container">
+            <div class="mb-4 flex flex-col justify-center items-center gap-5">
+                <h2 class="font-bold text-4xl text-[#0B3C5D] text-center">Entre em Contacto</h2>
+                <p class="text-md font-bold text-center">Estamos prontos para atender suas necessidades em caixilharia de alumínio</p>
+            </div>
+            
+            <div class="flex flex-col sm:place-content-center sm:justify-center sm:items-center sm:grid sm:grid-cols-2 gap-8 px-3">
+                <div class="container">
+                    <h3 class="hidden text-2xl mt-6 mb-1">Informações de Contacto</h3>
+                    
+                    <div class="p-4 flex gap-2 items-center mb-8">
+                        <div class="flex text-white rounded-full justify-center items-center p-3 aspect-square bg-[#4FC3F7]">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="flex flex-col flex-1">
+                            <h4 class="font-bold text-4sm">Telefone / WhatsApp</h4>
+                            <p>+244 944 255 241</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 flex gap-2 items-center mb-8">
+                        <div class="flex text-white rounded-full justify-center items-center p-3 aspect-square bg-[#4FC3F7]">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="flex flex-col flex-1">
+                            <h4 class="font-bold text-4sm">Email</h4>
+                            <p>contato@caixilhariamualo.co.ao</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 flex gap-2 items-center mb-8">
+                        <div class="flex text-white rounded-full justify-center items-center p-3 px-4 aspect-square bg-[#4FC3F7]">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="flex flex-col flex-1">
+                            <h4 class="font-bold text-4sm">Localização</h4>
+                            <p>Angola, Luanda</p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 flex gap-2 items-center mb-8">
+                        <div class="flex text-white rounded-full justify-center items-center p-3 aspect-square bg-[#4FC3F7]">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="flex flex-col flex-1">
+                            <h4 class="font-bold text-4sm">Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 8h00 - 18h00</p>
+                            <p>Sábado: 8h00 - 13h00</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="mt-8 text-2xl font-bold">Siga-nos</h3>
+                    <div class="flex gap-3 my-2">
+                        <div class="transition-all hover:translate-y-[-4px] flex justify-center items-center w-12 h-12 aspect-[1/1] font-bold text-white p-3 text-center rounded-full bg-[#0B3C5D]" title="Facebook">
+                            <a href="https://www.facebook.com/profile.php?id=61585433325362" target="_blank">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                        <div class="flex justify-center items-center w-12 transition-all hover:translate-y-[-4px] h-12 aspect-[1/1] font-bold text-white p-3 text-center rounded-full bg-[#0B3C5D]" title="WhatsApp">
+                            <a href="https://wa.me/244944255241" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                        <div class="flex justify-center items-center w-12 h-12 aspect-[1/1] font-bold text-white transition-all hover:translate-y-[-4px] p-3 text-center rounded-full bg-[#0B3C5D]" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="my-6 sm:m-0 text-black bg-white shadow-xl rounded-xl p-4 py-6 sm:p-10 sm:-x-8">
+                    <h3 class="font-semibold text-2xl my-2">Envie sua Mensagem</h3>
+                    <form onsubmit="event.preventDefault(); openWhatsOfForm()" id="contactForm" class="flex flex-col gap-2">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all" type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input placeholder="(opcional)" class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all" type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="(opcional)" class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Serviço de Interesse</label>
+                            <select id="service" name="service" class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all">
+                                <option value="Portas de Alumínio">Portas de Alumínio</option>
+                                <option value="Janelas em Alumínio">Janelas em Alumínio</option>
+                                <option value="Fachadas e Cortinas">Fachadas e Cortinas</option>
+                                <option value="Divisórias e Box">Divisórias e Box</option>
+                                <option value="Manutenção e Reparação">Manutenção e Reparação</option>
+                                <option value="Projeto Personalizado">Projeto Personalizado</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="transition-all hover:brightness-90 p-4 mt-3 rounded-sm bg-[#0B3C5D] text-white" style="width:100%;">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+    <footer class="text-black px-2 py-24 sm:p-24 min-h-96 bg-[#121212] w-full sm:px-[13%]">
+        <!-- (MANTENDO O FOOTER ORIGINAL) -->
+        <div class="container flex flex-col gap-8">
+            <div class="flex flex-col gap-8 sm:grid sm:grid-cols-3">
+                <div class="col-span-1">
+                    <div class="text-2xl text-white font-bold uppercase">
+                        <span class="text-[#0B3C5D]">Organizações</span> Mualo
+                    </div>
+                    <p class="text-[#f1f1f1] text-md">Especialistas em soluções de alumínio de alta qualidade para Angola. Fabricação, instalação e manutenção de portas, janelas, fachadas e muito mais.</p>
+                </div>
+                
+                <div class="col-span-1 flex flex-col text-[#4A4F55] text-md">
+                    <h3 class="text-xl text-[#f1f1f1]">Links Rápidos</h3>
+                    <ul class="my-2 list-none flex flex-col gap-1">
+                        <li ><a href="#home">Início</a></li>
+                        <li ><a href="#about">Sobre</a></li>
+                        <li ><a href="#services">Serviços</a></li>
+                        <li ><a href="#gallery">Projectos</a></li>
+                        <li ><a href="#map-section">Localização</a></li>
+                        <li ><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-span-1 flex flex-col text-[#4A4F55] text-md">
+                    <h3 class="text-xl text-[#f1f1f1] ">Contacto</h3>
+                    <div class="flex flex-col gap-2 my-2">
+                        <p><i class="fas fa-phone-alt"></i> +244 944 255 241</p>
+                        <p><i class="fas fa-envelope"></i> contato@caixilhariamualo.co.ao</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Angola, Cabinda e Luanda</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex flex-col gap-1 copyright text-center text-[#4A4F55]">
+                <p>&copy; 2026 Caixilharia de Alumínio Mualo. Todos os direitos reservados.</p>
+                <p>Desenvolvido por Sílvio Gonçalves</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- SCRIPTS -->
+    <!-- Leaflet JS (Mapa) -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Swiper JS (Galeria) -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- AOS (Animações no Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // INICIALIZAR ANIMAÇÕES
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar AOS
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+            
+            // Inicializar Swiper (Galeria)
+            const swiper = new Swiper('.mySwiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+            
+            // Inicializar Mapa
+            initMap();
+        });
+        
+        // MAPA INTERATIVO
+        let map;
+        let marker;
+        
+        function initMap() {
+            // Coordenadas de Luanda, Angola
+            const luandaCoords = [-8.839, 13.289];
+            
+            // Criar mapa
+            map = L.map('map').setView(luandaCoords, 13);
+            
+            // Adicionar tile layer (OpenStreetMap)
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // Adicionar marcador
+            marker = L.marker(luandaCoords)
+                .addTo(map)
+                .bindPopup('<b>Caixilharia de Alumínio Mualo</b><br>Cabinda / Luanda, Angola<br>+244 944 255 241')
+                .openPopup();
+            
+            // Adicionar controles de zoom
+            L.control.zoom({
+                position: 'topright'
+            }).addTo(map);
+            
+            // Adicionar controle de escala
+            L.control.scale().addTo(map);
+        }
+        
+        // FUNÇÕES DE CONTROLE DO MAPA
+        function zoomIn() {
+            map.zoomIn();
+        }
+        
+        function zoomOut() {
+            map.zoomOut();
+        }
+        
+        function resetView() {
+            map.setView([-8.839, 13.289], 13);
+        }
+        
+        function locateMe() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const userCoords = [position.coords.latitude, position.coords.longitude];
+                    L.marker(userCoords)
+                        .addTo(map)
+                        .bindPopup('Você está aqui!')
+                        .openPopup();
+                    
+                    map.setView(userCoords, 13);
+                });
+            } else {
+                alert("Geolocalização não suportada pelo seu navegador.");
+            }
+        }
+        
+        // FUNÇÕES DE NAVEGAÇÃO
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-mobile');
+            menu.classList.toggle('hidden');
+        }
+        
+        // FORMULÁRIO PARA WHATSAPP
+        function openWhatsOfForm() {
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value || 'Não informado';
+            const email = document.getElementById('email').value || 'Não informado';
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            const whatsappMessage = `*NOVO CONTATO - CAIXILHARIA MUALO*%0A%0A` +
+                                  `*Nome:* ${name}%0A` +
+                                  `*Telefone:* ${phone}%0A` +
+                                  `*Email:* ${email}%0A` +
+                                  `*Serviço de Interesse:* ${service}%0A` +
+                                  `*Mensagem:* ${message}`;
+            
+            window.open(`https://wa.me/244944255241?text=${whatsappMessage}`, '_blank');
+            
+            // Limpar formulário
+            document.getElementById('contactForm').reset();
+        }
+        let menu = document.querySelector('.menu-mobile')
+
+        function toggleMenu() {
+            menu.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>
