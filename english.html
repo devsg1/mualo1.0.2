@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en-AO" class="scroll-smooth" prefix="og: https://ogp.me/ns#">
 <head>
-    <!-- Metadados básicos -->
+    <!-- Basic metadata -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-    <!-- Título otimizado para SEO -->
+    <!-- SEO optimized title -->
     <title>Mualo Aluminum Carpentry - Doors Windows Angola | Aluminum Facades Luanda</title>
     <meta name="google-site-verification" content="C_0PqoBuVf3MMnmuSyqUU0_cJZgrCXxw0Yeuo-vupwo" />
     
-    <!-- Meta description otimizada -->
+    <!-- Optimized meta description -->
     <meta name="description" content="Mualo Carpentry Angola: Manufacturing and installation of aluminum doors, windows, facades, partitions, bathroom boxes. Free estimates +244 944 255 241 Luanda">
     
-    <!-- Palavras-chave -->
-    <meta name="keywords" content="aluminum carpentry, aluminum doors, aluminum windows, aluminum facades, Angola, Luanda">
+    <!-- Keywords -->
+    <meta name="keywords" content="mualo, Mualo, MUALO, Services Mualo, Mualo Services, Mualo Angola, Mualo Luanda, Mualo Cabinda, mualo angola, mualo luanda e cabinda, aluminum carpentry, aluminum doors, aluminum windows, aluminum facades, Angola, Luanda">
     
-    <!-- Leaflet CSS para Mapa Interativo -->
+    <!-- Leaflet CSS for Interactive Map -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     
-    <!-- Swiper CSS para Galeria -->
+    <!-- Swiper CSS for Gallery -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AOS para Animações no Scroll -->
+    <!-- AOS for Scroll Animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* ANIMAÇÃO CÚBICA NO BANNER */
+        /* CUBIC ANIMATION IN BANNER */
         .cubes {
             position: absolute;
             width: 100%;
@@ -85,7 +85,7 @@
             }
         }
         
-        /* BOTÕES DE NAVEGAÇÃO NO BANNER */
+        /* BANNER NAVIGATION BUTTONS */
         .banner-nav {
             position: absolute;
             bottom: 40px;
@@ -118,7 +118,7 @@
             border-color: #1E88E5;
         }
         
-        /* ANIMAÇÃO DE DIGITAR NO BANNER */
+        /* TYPEWRITER ANIMATION IN BANNER */
         .typewriter-text {
             overflow: hidden;
             border-right: .15em solid #1E88E5;
@@ -138,7 +138,7 @@
             50% { border-color: #1E88E5; }
         }
         
-        /* GALERIA SWIPER */
+        /* SWIPER GALLERY */
         .swiper {
             width: 100%;
             height: 400px;
@@ -208,7 +208,7 @@
             opacity: 1;
         }
         
-        /* MAPA INTERATIVO */
+        /* INTERACTIVE MAP */
         #map {
             width: 100%;
             height: 400px;
@@ -243,7 +243,7 @@
             transform: translateY(-2px);
         }
         
-        /* BOTÃO WHATSAPP FLUTUANTE */
+        /* FLOATING WHATSAPP BUTTON */
         .whatsapp-float {
             position: fixed;
             width: 60px;
@@ -280,7 +280,7 @@
             margin-top: 3px;
         }
         
-        /* ANIMAÇÕES NO SCROLL */
+        /* SCROLL ANIMATIONS */
         [data-aos] {
             opacity: 0;
             transition-property: transform, opacity;
@@ -290,7 +290,7 @@
             opacity: 1;
         }
         
-        /* RESPONSIVIDADE */
+        /* RESPONSIVENESS */
         @media (max-width: 768px) {
             .banner-nav {
                 bottom: 20px;
@@ -321,14 +321,14 @@
 </head>
 <body class="w-screen h-screen bg-black text-[#f9f9f9]">
     
-    <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/244944255241" target="_blank" class="whatsapp-float">
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/244944255241" style="display: none" target="_blank" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
     
     <div class="fixed z-[-1] bg-cover bg-center w-screen h-screen inset-0 bg-[url('./IMG-20260207-WA0068.jpg')]"></div>
     
-    <!-- Animações Cúbicas no Banner -->
+    <!-- Cubic Animations in Banner -->
     <div class="hidden cubes">
         <div class="cube"></div>
         <div class="cube"></div>
@@ -336,21 +336,32 @@
         <div class="cube"></div>
     </div>
     
-    <header class="z-10 bg-[#05070A] fixed w-full top-0 left-0 right-0 flex gap-4 justify-between items-center py-6 sm:py-6 px-[8%]">
+    <header class="transition-all z-10 bg-[#05070A] fixed w-full top-0 left-0 right-0 flex gap-4 justify-between items-center py-6 sm:py-6 px-[8%]">
         <div class="flex justify-center items-center">
             <img class="aspect-auto w-32" src="./logo.jpg"> 
             <h2 class="hidden bg-gradient-to-b from-[#1E88E5] to-[#0B3C5D] bg-clip-text text-transparent text-3xl font-bold">Mualo</h2>
         </div>
+        
+        
         <nav class="fixed sm:hidden menu-mobile top-0 bottom-0 transition-all bg-[#121212] p-10 pr-12">
             <div class="flex flex-col gap-6 text-md">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#gallery">Gallery</a>
+                <a href="#gallery">Projects</a>
                 <a href="#map-section">Location</a>
                 <a href="#contact">Contact</a>
+                <span onclick="document.querySelector('.lang-span').classList.toggle('hidden')">Language ▼
+                    <span class="lang-span hidden block flex flex-col gap-2 mt-2 text-sm font-light ml-4">
+                        <a href="./index.html">Português</a>
+                        <a class="text-[#1E88E5]">English</a>
+                    </span>
+                </span>
             </div>            
         </nav>
+        
+        <button onclick="toggleMenu()" class="text-3xl text-white font-bold sm:hidden">≡</button>
+        
         <nav class="hidden text-4sm sm:flex justify-between gap-6 items-center">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -359,29 +370,28 @@
             <a href="#map-section">Location</a>
             <a href="#contact">Contact</a>
         </nav>
-        <button onclick="toggleMenu()" class="text-3xl text-white font-bold sm:hidden">≡</button>
     </header>
     
-    <!-- Banner Principal com Animações -->
+    <!-- Main Banner with Animations -->
     <main id="home" class="relative flex flex-col gap-6 justify-center my-0.5 mt-24 items-center py-24 px-8 sm:p-24 min-h-128 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent">
         <h1 class="text-5xl font-bold text-white typewriter-text" data-aos="fade-up">
             Mualo Aluminum Carpentry
         </h1>
         <p class="font-semibold text-4sm max-w-2xl text-center" data-aos="fade-up" data-aos-delay="200">
-            Specialists in high-quality aluminum solutions for Angola. Manufacturing, installation, and maintenance of doors, windows, facades, and more.
+            Specialists in high-quality aluminum solutions for Angola. Manufacturing, installation and maintenance of doors, windows, facades and more.
         </p>
         <div class="flex mt-8 flex-wrap gap-4 items-center justify-center" data-aos="fade-up" data-aos-delay="400">
             <a href="https://wa.me/244944255241" target="_blank" class="transition-all hover:brightness-90 hover:translate-y-[-4px] text-xl p-3 px-6 rounded-xl bg-gradient-to-r border-[#C9CED6] from-[#1E88E5] to-[#0B3C5D]">
                 Request Quote
             </a>
-            <a href="#gallery" class="text-xl p-3 px-6 transition-all hover:translate-y-[-4px] hover:brightness-90 rounded-xl border-1 border-green-500 text-green-500">
-                View Gallery
+            <a href="#gallery" class="hidden text-xl p-3 px-6 transition-all hover:translate-y-[-4px] hover:brightness-90 rounded-xl border-1 border-green-500 text-green-500">
+                View Projects
             </a>
         </div>
         
-        <!-- Botões de Navegação no Banner -->
+        <!-- Banner Navigation Buttons -->
         <div class="banner-nav">
-            <button class="banner-nav-btn" onclick="scrollToSection('about')">
+            <button class="banner-nav-btn sticky left-0 right-0" onclick="scrollToSection('about')">
                 <i class="fas fa-chevron-down"></i>
             </button>
             <button class="banner-nav-btn" onclick="scrollToSection('services')">
@@ -396,18 +406,84 @@
         </div>
     </main>
     
-    <section id="about" class="flex flex-col sm:place-items-center sm:justify-center sm:items-center sm:grid sm:grid-cols-2 gap-12 px-4 sm:p-24 py-48 min-h-128 bg-[#C9CED6]" data-aos="fade-up">
-        <div class="flex flex-col gap-8 col-span-1 justify-center items-baseline">
-            <h2 class="font-bold text-4xl text-[#0B3C5D]">About the Company</h2>
-            <div class="flex flex-col gap-6">
-                <p class="text-md font-semibold">Mualo Aluminum Carpentry is an Angolan company, specialized in high-quality aluminum solutions for homes, businesses, and industries.</p>
-                <p class="text-md font-semibold">With a team of experienced professionals, we offer manufacturing, installation, and maintenance services for doors, windows, aluminum facades, and much more.</p>
-                <p class="text-md font-semibold">Our commitment is to excellence, durability, and complete customer satisfaction, using top-quality materials and modern manufacturing techniques.</p>
+    <section id="about" class="flex flex-col sm:place-items-center sm:justify-center sm:items-center sm:grid sm:grid-cols-2 gap-12 px-4 sm:p-24 py-48 min-h-128 bg-white" data-aos="fade-up">
+        <div class="flex flex-col gap-10 col-span-1 justify-center items-baseline">
+            <div>
+                <h2 class="font-bold text-4xl text-[#0B3C5D] mb-6 tracking-tight">About the Company</h2>
+                <div class="space-y-5 text-[#2D3748]">
+                    <p class="text-lg leading-relaxed"><strong class="text-[#0B3C5D]">Mualo Aluminum Carpentry</strong> is an Angolan company specialized in high-quality aluminum solutions for residences, businesses and industries.</p>
+                    <p class="text-lg leading-relaxed">With a team of experienced professionals, we offer manufacturing, installation and maintenance services for aluminum doors, windows, facades and much more.</p>
+                    <p class="text-lg leading-relaxed">Our commitment is to excellence, durability and total customer satisfaction, using first-class materials and modern manufacturing techniques.</p>
+                </div>
+            </div>
+    
+            <!-- Area of Activity -->
+            <div class="pt-6 border-t border-gray-200">
+                <h3 class="text-2xl font-semibold text-[#0B3C5D] mb-6 tracking-tight">Area of Activity</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#0B3C5D] text-white rounded-full flex items-center justify-center">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <h4 class="font-semibold text-[#121212] text-lg">Geographic Coverage</h4>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">We operate throughout the province of Luanda, with capacity for projects in other provinces of Angola, ensuring quality and punctuality in all regions.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 bg-[#0B3C5D] text-white rounded-full flex items-center justify-center">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h4 class="font-semibold text-[#121212] text-lg">Types of Projects</h4>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">Residential, commercial, industrial, governmental and institutional. We develop customized solutions for each type of need.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- References -->
+            <div class="pt-6 border-t border-gray-200">
+                <h3 class="text-2xl font-semibold text-[#0B3C5D] mb-6 tracking-tight">References</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-1">
+                        <h4 class="font-semibold text-[#121212] text-lg mb-2">Consolidated Experience</h4>
+                        <p class="text-gray-700">Over 15 years of presence in the Angolan carpentry market, with a portfolio of executed projects.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-semibold text-[#121212] text-lg mb-2">Certified Quality</h4>
+                        <p class="text-gray-700">International standards of manufacturing and installation, with quality control at all stages.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-semibold text-[#121212] text-lg mb-2">Premium Materials</h4>
+                        <p class="text-gray-700">Exclusive use of high-strength aluminum with superior finish and guaranteed durability.</p>
+                    </div>
+                    <div class="space-y-1">
+                        <h4 class="font-semibold text-[#121212] text-lg mb-2">Technical Team</h4>
+                        <p class="text-gray-700">Qualified professionals, with continuous training and practical experience in complex projects.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Clients -->
+            <div class="pt-6 border-t border-gray-200">
+                <h3 class="text-2xl font-semibold text-[#0B3C5D] mb-6 tracking-tight">Clients and Partnerships</h3>
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <h4 class="font-semibold text-[#121212] text-lg">Diversified Portfolio</h4>
+                        <p class="text-gray-700 leading-relaxed">We have already served more than 500 clients, including high-end residences, multinational companies, industrial complexes and reference public institutions.</p>
+                    </div>
+                    <div class="bg-[#f8fafc] border-l-4 border-[#0B3C5D] p-5">
+                        <p class="text-gray-800 italic leading-relaxed text-lg">
+                            "We have been working with Mualo for over 3 years on various projects. The quality of aluminum, technical rigor and professionalism of the team are consistently exceptional. A reliable partnership that we recommend."
+                        </p>
+                        <p class="mt-4 font-medium text-[#0B3C5D] text-right">— Eng. João Silva<br><span class="text-sm text-gray-600">Project Manager, Construções Lda.</span></p>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="w-10/10 rounded-2xl col-span-1 aspect-[16/10] bg-[url('./IMG-20260207-WA0061.jpg')] bg-center bg-cover" data-aos="zoom-in"></div>
+        <div class="hidden w-10/10 rounded-2xl col-span-1 aspect-[16/10] bg-[url('./IMG-20260207-WA0061.jpg')] bg-center bg-cover shadow-xl" data-aos="zoom-in"></div>
     </section>
-    
     <section id="services" class="text-black px-2 py-24 sm:p-24 min-h-128 w-full" data-aos="fade-up">
         <div class="container">
             <div class="flex flex-col text-white justify-center items-center gap-5">
@@ -425,7 +501,7 @@
                 <div class="col-span-1 p-8 rounded-xl shadow-xl bg-white w-19/20">
                     <div class="rounded-xl mb-4 w-full h-40 bg-cover bg-center bg-[url('./IMG-20260207-WA0049.jpg')]"></div>
                     <h3 class="text-2xl font-bold mb-3 uppercase">Aluminum Windows</h3>
-                    <p class="text-xl font-semibold">Modern, efficient, and secure windows that provide thermal and acoustic comfort, while adding value to the property.</p>
+                    <p class="text-xl font-semibold">Modern, efficient and secure windows that provide thermal and acoustic comfort, while adding value to the property.</p>
                 </div>
                 
                 <div class="col-span-1 p-8 rounded-xl shadow-xl bg-white w-19/20">
@@ -437,7 +513,7 @@
         </div>
     </section>
     
-    <!-- GALERIA INTERATIVA -->
+    <!-- INTERACTIVE GALLERY -->
     <section id="gallery" class="py-24 bg-[#0B3C5D] text-white" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-8">
             <h2 class="text-4xl font-bold text-center mb-4">Work Gallery</h2>
@@ -447,7 +523,7 @@
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <img src="./IMG-20260207-WA0078.jpg" alt="Aluminum Doors">
+                        <img src="./016.jpg" alt="Aluminum Doors">
                         <div class="swiper-slide-info">
                             <h3>Aluminum Doors</h3>
                             <p>Residential and commercial door installation</p>
@@ -461,21 +537,21 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <img src="./IMG-20260207-WA0062.jpg" alt="Partitions">
+                        <img src="./001.jpg" alt="Partitions">
                         <div class="swiper-slide-info">
                             <h3>Aluminum Partitions</h3>
                             <p>Separated environments with elegance</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <img src="./IMG-20260207-WA0041.jpg" alt="Maintenance">
+                        <img src="./014.jpg" alt="Maintenance">
                         <div class="swiper-slide-info">
                             <h3>Aluminum Maintenance</h3>
                             <p>Repair and conservation services</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
-                        <img src="./IMG-20260207-WA0056.jpg" alt="Custom Projects">
+                        <img src="./005.jpg" alt="Custom Projects">
                         <div class="swiper-slide-info">
                             <h3>Custom Projects</h3>
                             <p>Tailor-made solutions for each client</p>
@@ -489,16 +565,16 @@
         </div>
     </section>
     
-    <!-- MAPA INTERATIVO -->
-    <section id="map-section" class="py-24 bg-[#C9CED6] text-black" data-aos="fade-up">
+    <!-- INTERACTIVE MAP -->
+    <section id="map-section" class="z-10 py-24 bg-[#f1f1f1] text-black">
         <div class="container mx-auto px-4 sm:px-8">
             <h2 class="text-4xl font-bold text-center mb-4 text-[#0B3C5D]">Our Location</h2>
             <p class="text-center mb-8 max-w-2xl mx-auto">Find us easily in Luanda, Angola. Use the controls to explore the map.</p>
             
-            <!-- Mapa Container -->
-            <div id="map"></div>
+            <!-- Map Container -->
+            <div id="map" class="sticky left-0 right-0"></div>
             
-            <!-- Controles do Mapa -->
+            <!-- Map Controls -->
             <div style="display: none;" class="hidden map-controls">
                 <button class="hidden map-btn" onclick="zoomIn()">
                     <i class="fas fa-search-plus"></i> Zoom In
@@ -514,7 +590,7 @@
                 </button>
             </div>
             
-            <div class="mt-8 text-center">
+            <div class="hidden mt-8 text-center">
                 <h3 class="text-xl font-bold text-[#0B3C5D]">Mualo Aluminum Carpentry</h3>
                 <p class="mt-2"><i class="fas fa-map-marker-alt text-[#1E88E5]"></i> Luanda, Angola</p>
                 <p class="mt-1"><i class="fas fa-phone text-[#1E88E5]"></i> +244 944 255 241</p>
@@ -522,8 +598,8 @@
         </div>
     </section>
     
-    <section id="contact" class="text-black px-2 py-24 sm:p-24 min-h-128 bg-[#f1f1f1] w-full sm:px-[13%]" data-aos="fade-up">
-        <!-- (MANTENDO O FORMULÁRIO ORIGINAL) -->
+    <section id="contact" class="text-black px-2 py-24 sm:p-24 min-h-128 bg-[#f1f1f1] w-full sm:px-[13%]">
+        <!-- (KEEPING ORIGINAL FORM) -->
         <div class="container">
             <div class="mb-4 flex flex-col justify-center items-center gap-5">
                 <h2 class="font-bold text-4xl text-[#0B3C5D] text-center">Contact Us</h2>
@@ -560,7 +636,7 @@
                         </div>
                         <div class="flex flex-col flex-1">
                             <h4 class="font-bold text-4sm">Location</h4>
-                            <p>Angola, Luanda</p>
+                            <p>Angola, Luanda and Cabinda</p>
                         </div>
                     </div>
                     
@@ -598,22 +674,22 @@
                     <form onsubmit="event.preventDefault(); openWhatsOfForm()" id="contactForm" class="flex flex-col gap-2">
                         <div class="form-group">
                             <label for="name">Full Name</label>
-                            <input class="w-full block border rounded-sm p-2 outline-none" type="text" id="name" name="name" required>
+                            <input class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all" type="text" id="name" name="name" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="phone">Phone</label>
-                            <input placeholder="(optional)" class="w-full block border rounded-sm p-2 outline-none" type="tel" id="phone" name="phone">
+                            <input placeholder="(optional)" class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all" type="tel" id="phone" name="phone">
                         </div>
                         
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="(optional)" class="w-full block border rounded-sm p-2 outline-none">
+                            <input type="email" id="email" name="email" placeholder="(optional)" class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all">
                         </div>
                         
                         <div class="form-group">
                             <label for="service">Service of Interest</label>
-                            <select id="service" name="service" style="width:100%; padding:12px 15px; border:1px solid #ddd; border-radius:5px;">
+                            <select id="service" name="service" class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all">
                                 <option value="Aluminum Doors">Aluminum Doors</option>
                                 <option value="Aluminum Windows">Aluminum Windows</option>
                                 <option value="Facades and Curtains">Facades and Curtains</option>
@@ -625,7 +701,7 @@
                         
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea class="w-full block border rounded-sm p-2 outline-none" id="message" name="message" rows="5" required></textarea>
+                            <textarea class="w-full block border border-slate-300 rounded-sm p-2 outline-slate-500 transition-all" id="message" name="message" rows="5" required></textarea>
                         </div>
                         
                         <button type="submit" class="transition-all hover:brightness-90 p-4 mt-3 rounded-sm bg-[#0B3C5D] text-white" style="width:100%;">
@@ -637,15 +713,15 @@
         </div>
     </section>
         
-    <footer class="text-black px-2 py-24 sm:p-24 min-h-96 bg-[#121212] w-full sm:px-[13%]" data-aos="fade-up">
-        <!-- (MANTENDO O FOOTER ORIGINAL) -->
+    <footer class="text-black px-2 py-24 sm:p-24 min-h-96 bg-[#121212] w-full sm:px-[13%]">
+        <!-- (KEEPING ORIGINAL FOOTER) -->
         <div class="container flex flex-col gap-8">
             <div class="flex flex-col gap-8 sm:grid sm:grid-cols-3">
                 <div class="col-span-1">
                     <div class="text-2xl text-white font-bold uppercase">
                         <span class="text-[#0B3C5D]">Mualo</span> Organizations
                     </div>
-                    <p class="text-[#f1f1f1] text-md">Specialists in high-quality aluminum solutions for Angola, Luanda. Manufacturing, installation, and maintenance of doors, windows, facades, and more.</p>
+                    <p class="text-[#f1f1f1] text-md">Specialists in high-quality aluminum solutions for Angola. Manufacturing, installation and maintenance of doors, windows, facades and more.</p>
                 </div>
                 
                 <div class="col-span-1 flex flex-col text-[#4A4F55] text-md">
@@ -654,7 +730,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#gallery">Projects</a></li>
                         <li><a href="#map-section">Location</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -665,7 +741,7 @@
                     <div class="flex flex-col gap-2 my-2">
                         <p><i class="fas fa-phone-alt"></i> +244 944 255 241</p>
                         <p><i class="fas fa-envelope"></i> contact@caixilhariamualo.co.ao</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Angola, Luanda</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Angola, Cabinda and Luanda</p>
                     </div>
                 </div>
             </div>
@@ -678,26 +754,26 @@
     </footer>
     
     <!-- SCRIPTS -->
-    <!-- Leaflet JS (Mapa) -->
+    <!-- Leaflet JS (Map) -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
-    <!-- Swiper JS (Galeria) -->
+    <!-- Swiper JS (Gallery) -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
-    <!-- AOS (Animações no Scroll) -->
+    <!-- AOS (Scroll Animations) -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
-        // INICIALIZAR ANIMAÇÕES
+        // INITIALIZE ANIMATIONS
         document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar AOS
+            // Initialize AOS
             AOS.init({
                 duration: 1000,
                 once: true,
                 offset: 100
             });
             
-            // Inicializar Swiper (Galeria)
+            // Initialize Swiper (Gallery)
             const swiper = new Swiper('.mySwiper', {
                 slidesPerView: 1,
                 spaceBetween: 30,
@@ -724,43 +800,43 @@
                 },
             });
             
-            // Inicializar Mapa
+            // Initialize Map
             initMap();
         });
         
-        // MAPA INTERATIVO
+        // INTERACTIVE MAP
         let map;
         let marker;
         
         function initMap() {
-            // Coordenadas de Luanda, Angola
+            // Luanda, Angola coordinates
             const luandaCoords = [-8.839, 13.289];
             
-            // Criar mapa
+            // Create map
             map = L.map('map').setView(luandaCoords, 13);
             
-            // Adicionar tile layer (OpenStreetMap)
+            // Add tile layer (OpenStreetMap)
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
                 maxZoom: 19
             }).addTo(map);
             
-            // Adicionar marcador
+            // Add marker
             marker = L.marker(luandaCoords)
                 .addTo(map)
-                .bindPopup('<b>Mualo Aluminum Carpentry</b><br>Luanda, Angola<br>+244 944 255 241')
+                .bindPopup('<b>Mualo Aluminum Carpentry</b><br>Cabinda / Luanda, Angola<br>+244 944 255 241')
                 .openPopup();
             
-            // Adicionar controles de zoom
+            // Add zoom controls
             L.control.zoom({
                 position: 'topright'
             }).addTo(map);
             
-            // Adicionar controle de escala
+            // Add scale control
             L.control.scale().addTo(map);
         }
         
-        // FUNÇÕES DE CONTROLE DO MAPA
+        // MAP CONTROL FUNCTIONS
         function zoomIn() {
             map.zoomIn();
         }
@@ -789,7 +865,7 @@
             }
         }
         
-        // FUNÇÕES DE NAVEGAÇÃO
+        // NAVIGATION FUNCTIONS
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({
                 behavior: 'smooth'
@@ -801,7 +877,7 @@
             menu.classList.toggle('hidden');
         }
         
-        // FORMULÁRIO PARA WHATSAPP
+        // FORM TO WHATSAPP
         function openWhatsOfForm() {
             const name = document.getElementById('name').value;
             const phone = document.getElementById('phone').value || 'Not provided';
@@ -818,7 +894,7 @@
             
             window.open(`https://wa.me/244944255241?text=${whatsappMessage}`, '_blank');
             
-            // Limpar formulário
+            // Clear form
             document.getElementById('contactForm').reset();
         }
         let menu = document.querySelector('.menu-mobile')
