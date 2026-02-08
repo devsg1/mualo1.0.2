@@ -23,3 +23,12 @@ nav a:target-current {
 .menu-mobile.active {
     left: 0;
 }
+
+.btnMenu::before {
+    transition: 1s;
+    content: '≡';
+}
+
+.btnMenu.active::before {
+    content: '×';
+}

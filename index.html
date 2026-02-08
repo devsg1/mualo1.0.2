@@ -223,7 +223,7 @@
         "url": "https://mualo.vercel.app/",
         "logo": "https://mualo.vercel.app/logo.jpg",
         "telephone": "+244944255241",
-        "email": "contato@caixilhariamualo.co.ao",
+        "email": "januariobilongo@gmail.com",
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Luanda",
@@ -373,62 +373,6 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* ANIMAÇÃO CÚBICA NO BANNER */
-        .cubes {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .cube {
-            position: absolute;
-            top: 80vh;
-            left: 45vw;
-            width: 10px;
-            height: 10px;
-            border: solid 1px #1E88E5;
-            transform-origin: top left;
-            transform: scale(0) rotate(0deg) translate(-50%, -50%);
-            animation: cube 12s ease-in forwards infinite;
-        }
-        
-        .cube:nth-child(2n) {
-            border-color: #0B3C5D;
-        }
-        
-        .cube:nth-child(2) {
-            animation-delay: 2s;
-            left: 25vw;
-            top: 40vh;
-        }
-        
-        .cube:nth-child(3) {
-            animation-delay: 4s;
-            left: 75vw;
-            top: 50vh;
-        }
-        
-        .cube:nth-child(4) {
-            animation-delay: 6s;
-            left: 90vw;
-            top: 10vh;
-        }
-        
-        @keyframes cube {
-            from {
-                transform: scale(0) rotate(0deg) translate(-50%, -50%);
-                opacity: 1;
-            }
-            to {
-                transform: scale(20) rotate(960deg) translate(-50%, -50%);
-                opacity: 0;
-            }
-        }
-        
         /* BOTÕES DE NAVEGAÇÃO NO BANNER */
         .banner-nav {
             position: absolute;
@@ -671,32 +615,13 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="mobile-web-app-capable" content="yes">
     
-    <!-- Verificação de propriedade do site -->
-    <!-- Adicione aqui os códigos quando tiver -->
-    <!-- <meta name="google-site-verification" content="SEU_CODIGO_AQUI"> -->
-    <!-- <meta name="msvalidate.01" content="SEU_CODIGO_AQUI"> -->
-    
-    <!-- Cache e Performance -->
     <meta http-equiv="Cache-Control" content="max-age=31536000, public">
     <meta http-equiv="Expires" content="Mon, 01 Jan 2029 00:00:00 GMT">
     
 </head>
 <body class="w-screen h-screen bg-black text-[#f9f9f9]">
     
-    <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/244944255241" style="display: none" target="_blank" class="whatsapp-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-    
     <div class="fixed z-[-1] bg-cover bg-center w-screen h-screen inset-0 bg-[url('./IMG-20260207-WA0068.jpg')]"></div>
-    
-    <!-- Animações Cúbicas no Banner -->
-    <div class="hidden cubes">
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-        <div class="cube"></div>
-    </div>
     
     <header class="transition-all z-10 bg-[#05070A] fixed w-full top-0 left-0 right-0 flex gap-4 justify-between items-center py-6 sm:py-6 px-[8%]">
         <div class="flex justify-center items-center">
@@ -707,12 +632,12 @@
         
         <nav class="fixed sm:hidden menu-mobile top-0 bottom-0 transition-all bg-[#121212] p-10 pr-12">
             <div class="flex flex-col gap-6 text-md">
-                <a href="#home">Ínicio</a>
-                <a href="#about">Sobre</a>
-                <a href="#services">Serviços</a>
-                <a href="#gallery">Projectos</a>
-                <a href="#map-section">Localização</a>
-                <a href="#contact">Contacto</a>
+                <a href="#home" onclick="closePoitMenu()">Ínicio</a>
+                <a href="#about" onclick="closePoitMenu()">Sobre</a>
+                <a href="#services" onclick="closePoitMenu()">Serviços</a>
+                <a href="#gallery" onclick="closePoitMenu()">Projectos</a>
+                <a href="#map-section" onclick="closePoitMenu()">Localização</a>
+                <a href="#contact" onclick="closePoitMenu()">Contacto</a>
                 <span onclick="document.querySelector('.lang-span').classList.toggle('hidden')">Idioma ▼
                     <span class="lang-span hidden block flex flex-col gap-2 mt-2 text-sm font-light ml-4">
                         <a class="text-[#1E88E5]">Português</a>
@@ -722,7 +647,7 @@
             </div>            
         </nav>
         
-        <button onclick="toggleMenu()" class="text-3xl text-white font-bold sm:hidden">≡</button>
+        <button onclick="toggleMenu()" class="transition-all text-3xl text-white font-bold sm:hidden btnMenu"></button>
         
         <nav class="hidden text-4sm sm:flex justify-between gap-6 items-center">
             <a href="#home">Ínicio</a>
@@ -735,7 +660,7 @@
     </header>
     
     <!-- Banner Principal com Animações -->
-    <main id="home" class="relative flex flex-col gap-6 justify-center my-0.5 mt-24 items-center py-24 px-8 sm:p-24 min-h-128 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent">
+    <main onpointerout="closePoitMenu()" id="home" class="relative flex flex-col gap-6 justify-center my-0.5 mt-24 items-center py-24 px-8 sm:p-24 min-h-128 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent">
         <h1 class="text-5xl font-bold text-white typewriter-text" data-aos="fade-up">
             Caixilharia de Alumínio Mualo
         </h1>
@@ -768,7 +693,7 @@
         </div>
     </main>
     
-    <section id="about" class="flex flex-col sm:place-items-center sm:justify-center sm:items-center sm:grid sm:grid-cols-2 gap-12 px-4 sm:p-24 py-48 min-h-128 bg-white" data-aos="fade-up">
+    <section onpointerout="closePoitMenu()" id="about" class="flex flex-col sm:place-items-center sm:justify-center sm:items-center sm:grid sm:grid-cols-2 gap-12 px-4 sm:p-24 py-48 min-h-128 bg-white" data-aos="fade-up">
         <div class="flex flex-col gap-10 col-span-1 justify-center items-baseline">
             <div>
                 <h2 class="font-bold text-4xl text-[#0B3C5D] mb-6 tracking-tight">Sobre a Empresa</h2>
@@ -844,9 +769,9 @@
                 </div>
             </div>
         </div>
-        <div class="hidden sm:flex w-10/10 rounded-2xl col-span-1 aspect-[16/10] bg-[url('./IMG-20260207-WA0061.jpg')] bg-center bg-cover shadow-xl" data-aos="zoom-in"></div>
+        <div class="hidden w-10/10 rounded-2xl col-span-1 aspect-[16/10] bg-[url('./IMG-20260207-WA0061.jpg')] bg-center bg-cover shadow-xl" data-aos="zoom-in"></div>
     </section>
-    <section id="services" class="text-black px-2 py-24 sm:p-24 min-h-128 w-full" data-aos="fade-up">
+    <section onpointerout="closePoitMenu()" id="services" class="text-black px-2 py-24 sm:p-24 min-h-128 w-full" data-aos="fade-up">
         <div class="container">
             <div class="flex flex-col text-white justify-center items-center gap-5">
                 <h2 class="font-bold text-4xl text-white text-center">Nossos Serviços</h2>
@@ -876,7 +801,7 @@
     </section>
     
     <!-- GALERIA INTERATIVA -->
-    <section id="gallery" class="py-24 bg-[#0B3C5D] text-white" data-aos="fade-up">
+    <section onpointerout="closePoitMenu()" id="gallery" class="py-24 bg-[#0B3C5D] text-white" data-aos="fade-up">
         <div class="container mx-auto px-4 sm:px-8">
             <h2 class="text-4xl font-bold text-center mb-4">Galeria de Trabalhos</h2>
             <p class="text-center mb-12 max-w-2xl mx-auto">Confira alguns dos nossos trabalhos realizados em alumínio. Navegue pela galeria para ver nossa qualidade e diversidade de serviços.</p>
@@ -889,6 +814,20 @@
                         <div class="swiper-slide-info">
                             <h3>Portas de Alumínio</h3>
                             <p>Instalação de portas residenciais e comerciais</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./IMG-20260207-WA0042.jpg" alt="Janelas em Alumínio">
+                        <div class="swiper-slide-info">
+                            <h3>Janelas em Alumínio</h3>
+                            <p>Sistemas de janelas com isolamento térmico</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./IMG-20260207-WA0055.jpg" alt="Janelas em Alumínio">
+                        <div class="swiper-slide-info">
+                            <h3>Janelas em Alumínio</h3>
+                            <p>Feito com os melhores materiais do mercado</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -906,10 +845,31 @@
                         </div>
                     </div>
                     <div class="swiper-slide">
+                        <img src="./002.jpg" alt="Divisórias">
+                        <div class="swiper-slide-info">
+                            <h3>Divisórias em Alumínio</h3>
+                            <p>Ambientes separados com elegância</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
                         <img src="./014.jpg" alt="Manutenção">
                         <div class="swiper-slide-info">
                             <h3>Manutenção de Alumínio</h3>
                             <p>Serviços de reparação e conservação</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./IMG-20260207-WA0040.jpg" alt="Manutenção">
+                        <div class="swiper-slide-info">
+                            <h3>Manutenção de Alumínio</h3>
+                            <p>Serviços de reparação e conservação</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./011.jpg" alt="Projectos Personalizados">
+                        <div class="swiper-slide-info">
+                            <h3>Projectos Personalizados</h3>
+                            <p>Soluções sob medida para cada cliente</p>
                         </div>
                     </div>
                     <div class="swiper-slide">
@@ -928,39 +888,17 @@
     </section>
     
     <!-- MAPA INTERATIVO -->
-    <section id="map-section" class="z-10 py-24 bg-[#f1f1f1] text-black">
+    <section onpointerout="closePoitMenu()" id="map-section" class="z-10 py-24 bg-[#f1f1f1] text-black">
         <div class="container mx-auto px-4 sm:px-8">
             <h2 class="text-4xl font-bold text-center mb-4 text-[#0B3C5D]">Nossa Localização</h2>
             <p class="text-center mb-8 max-w-2xl mx-auto">Encontre-nos facilmente em Luanda, Angola. Use os controles para explorar o mapa.</p>
             
             <!-- Mapa Container -->
             <div id="map" class="sticky left-0 right-0"></div>
-            
-            <!-- Controles do Mapa -->
-            <div style="display: none;" class="hidden map-controls">
-                <button class="hidden map-btn" onclick="zoomIn()">
-                    <i class="fas fa-search-plus"></i> Zoom In
-                </button>
-                <button class="hidden map-btn" onclick="zoomOut()">
-                    <i class="fas fa-search-minus"></i> Zoom Out
-                </button>
-                <button class="hidden map-btn" onclick="resetView()">
-                    <i class="fas fa-sync-alt"></i> Resetar
-                </button>
-                <button class="hidden hide map-btn" onclick="locateMe()">
-                    <i class="fas fa-location-arrow"></i> Minha Localização
-                </button>
-            </div>
-            
-            <div class="hidden mt-8 text-center">
-                <h3 class="text-xl font-bold text-[#0B3C5D]">Caixilharia de Alumínio Mualo</h3>
-                <p class="mt-2"><i class="fas fa-map-marker-alt text-[#1E88E5]"></i> Luanda, Angola</p>
-                <p class="mt-1"><i class="fas fa-phone text-[#1E88E5]"></i> +244 944 255 241</p>
-            </div>
         </div>
     </section>
     
-    <section id="contact" class="text-black px-2 py-24 sm:p-24 min-h-128 bg-[#f1f1f1] w-full sm:px-[13%]">
+    <section onpointerout="closePoitMenu()" id="contact" class="text-black px-2 py-24 sm:p-24 min-h-128 bg-[#f1f1f1] w-full sm:px-[13%]">
         <!-- (MANTENDO O FORMULÁRIO ORIGINAL) -->
         <div class="container">
             <div class="mb-4 flex flex-col justify-center items-center gap-5">
@@ -988,7 +926,7 @@
                         </div>
                         <div class="flex flex-col flex-1">
                             <h4 class="font-bold text-4sm">Email</h4>
-                            <p>contato@caixilhariamualo.co.ao</p>
+                            <p>januariobilongo@gmail.com</p>
                         </div>
                     </div>
                     
@@ -1075,7 +1013,7 @@
         </div>
     </section>
         
-    <footer class="text-black px-2 py-24 sm:p-24 min-h-96 bg-[#121212] w-full sm:px-[13%]">
+    <footer onpointerout="closePoitMenu()" class="text-black px-2 py-24 sm:p-24 min-h-96 bg-[#121212] w-full sm:px-[13%]">
         <!-- (MANTENDO O FOOTER ORIGINAL) -->
         <div class="container flex flex-col gap-8">
             <div class="flex flex-col gap-8 sm:grid sm:grid-cols-3">
@@ -1102,7 +1040,7 @@
                     <h3 class="text-xl text-[#f1f1f1] ">Contacto</h3>
                     <div class="flex flex-col gap-2 my-2">
                         <p><i class="fas fa-phone-alt"></i> +244 944 255 241</p>
-                        <p><i class="fas fa-envelope"></i> contato@caixilhariamualo.co.ao</p>
+                        <p><i class="fas fa-envelope"></i> januariobilongo@gmail.com</p>
                         <p><i class="fas fa-map-marker-alt"></i> Angola, Cabinda e Luanda</p>
                     </div>
                 </div>
@@ -1172,7 +1110,7 @@
         
         function initMap() {
             // Coordenadas de Luanda, Angola
-            const luandaCoords = [-8.839, 13.289];
+            const luandaCoords = [-8.838313, 13.335698];
             
             // Criar mapa
             map = L.map('map').setView(luandaCoords, 13);
@@ -1208,7 +1146,7 @@
         }
         
         function resetView() {
-            map.setView([-8.839, 13.289], 13);
+            map.setView([-8.838313, 13.335698], 13);
         }
         
         function locateMe() {
@@ -1234,10 +1172,10 @@
             });
         }
         
-        function toggleMenu() {
+        /*function toggleMenu() {
             const menu = document.querySelector('.menu-mobile');
             menu.classList.toggle('hidden');
-        }
+        }*/
         
         // FORMULÁRIO PARA WHATSAPP
         function openWhatsOfForm() {
@@ -1260,9 +1198,15 @@
             document.getElementById('contactForm').reset();
         }
         let menu = document.querySelector('.menu-mobile')
+        let btnMenu = document.querySelector('.btnMenu')
 
         function toggleMenu() {
             menu.classList.toggle('active')
+            btnMenu.classList.toggle('active')
+        }
+        function closePoitMenu() {
+            menu.classList.remove('active')
+            btnMenu.classList.remove('active')
         }
     </script>
 </body>
